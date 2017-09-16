@@ -1,13 +1,16 @@
-var react = require('react');
-var reactDOM = require('react-dom');
+var React = require('react');
+var ReactDOM = require('react-dom');
 
-var App = react.createClass({
+var App = React.createClass({
   render:function(){
     return(
-      <h1>salaam</h1>
+		<h1>
+		mehdi kamari
+		</h1>
     )
   }
   
 });
 
-reactDOM.render(<App/>,document.getElementById('myapp'));
+ReactDOM.render(<App/>,document.getElementById('myapp'));
+

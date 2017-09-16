@@ -21157,20 +21157,22 @@ module.exports = require('./lib/React');
 },{"./lib/React":160}],184:[function(require,module,exports){
 'use strict';
 
-var react = require('react');
-var reactDOM = require('react-dom');
+var React = require('react');
+var ReactDOM = require('react-dom');
 
-var App = react.createClass({
+var App = React.createClass({
+  displayName: 'App',
+
   render: function render() {
     return React.createElement(
       'h1',
       null,
-      'salaam'
+      'mehdi kamari'
     );
   }
 
 });
 
-reactDOM.render(React.createElement(App, null), document.getElementById('myapp'));
+ReactDOM.render(React.createElement(App, null), document.getElementById('myapp'));
 
 },{"react":183,"react-dom":31}]},{},[184]);
