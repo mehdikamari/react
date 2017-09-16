@@ -1,0 +1,30 @@
+{
+  "name": "reactproject",
+  "version": "1.0.0",
+  "description": "this is first react application with mehdi kamari",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mehdi Kamari",
+  "license": "ISC",
+  "devDependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babelify": "^7.3.0",
+    "browser-sync": "^2.18.5",
+    "browserify": "^13.1.1",
+    "gulp": "^3.9.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-uglify": "^2.0.0",
+    "gulp-util": "^3.0.7",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.8.0"
+  },
+  "dependencies": {
+    "antd": "^2.5.3"
+  }
+}
