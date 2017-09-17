@@ -4,18 +4,21 @@ var ReactDOM = require('react-dom');
 var App = React.createClass({
   render:function(){
     return(
-		<a href="">
-		<h1>
-		mehdi kamari
-		</h1>
-		</a>
+        <div>Fenty Beauty is eponymous of the singer</div>
     )
   }
 
 });
 
+function getFullName(user){
+  return user.name + " "+ user.family;
+}
+var user ={
+  name : "mehdi",
+  family : "kamari"
+}
 var element = (
-<b>welcome to reactJS</b>
+<b>welcome {getFullName(user)}</b>
 );
-ReactDOM.render(<App/>,document.getElementById('myapp'));
-ReactDOM.render(element,document.getElementById('myapp2'));
+ReactDOM.render(<App/>,document.getElementById('myapp2'));
+ReactDOM.render(element,document.getElementById('myapp'));

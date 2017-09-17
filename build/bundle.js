@@ -21161,28 +21161,32 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 
 var App = React.createClass({
-		displayName: 'App',
+  displayName: 'App',
 
-		render: function render() {
-				return React.createElement(
-						'a',
-						{ href: '' },
-						React.createElement(
-								'h1',
-								null,
-								'mehdi kamari'
-						)
-				);
-		}
+  render: function render() {
+    return React.createElement(
+      'div',
+      null,
+      'Fenty Beauty is eponymous of the singer'
+    );
+  }
 
 });
 
+function getFullName(user) {
+  return user.name + " " + user.family;
+}
+var user = {
+  name: "mehdi",
+  family: "kamari"
+};
 var element = React.createElement(
-		'b',
-		null,
-		'welcome to reactJS'
+  'b',
+  null,
+  'welcome ',
+  getFullName(user)
 );
-ReactDOM.render(React.createElement(App, null), document.getElementById('myapp'));
-ReactDOM.render(element, document.getElementById('myapp2'));
+ReactDOM.render(React.createElement(App, null), document.getElementById('myapp2'));
+ReactDOM.render(element, document.getElementById('myapp'));
 
 },{"react":183,"react-dom":31}]},{},[184]);
