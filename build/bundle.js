@@ -21157,17 +21157,33 @@ module.exports = require('./lib/React');
 },{"./lib/React":160}],184:[function(require,module,exports){
 'use strict';
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 var React = require('react');
 var ReactDOM = require('react-dom');
 
 var App = React.createClass({
   displayName: 'App',
 
+  getFullName: function getFullName(user) {
+    return user.firstName + " " + user.lastName;
+  },
   render: function render() {
+    var user2 = {
+      firstName: "Mehdi",
+      lastName: "Kamari"
+    };
     return React.createElement(
       'div',
       null,
-      'Fenty Beauty is eponymous of the singer'
+      'Fenty Beauty is eponymous of the singer : ',
+      this.getFullName(user2)
     );
   }
 
@@ -21188,5 +21204,31 @@ var element = React.createElement(
 );
 ReactDOM.render(React.createElement(App, null), document.getElementById('myapp2'));
 ReactDOM.render(element, document.getElementById('myapp'));
+/*********EC6***********************/
+
+var App3 = function (_React$Component) {
+  _inherits(App3, _React$Component);
+
+  function App3() {
+    _classCallCheck(this, App3);
+
+    return _possibleConstructorReturn(this, (App3.__proto__ || Object.getPrototypeOf(App3)).apply(this, arguments));
+  }
+
+  _createClass(App3, [{
+    key: 'render',
+    value: function render() {
+      return React.createElement(
+        'div',
+        { color: 'red' },
+        'This is Header'
+      );
+    }
+  }]);
+
+  return App3;
+}(React.Component);
+
+ReactDOM.render(React.createElement(App3, null), document.getElementById('myapp3'));
 
 },{"react":183,"react-dom":31}]},{},[184]);
