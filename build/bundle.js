@@ -21202,8 +21202,7 @@ var element = React.createElement(
   'welcome ',
   getFullName(user)
 );
-ReactDOM.render(React.createElement(App, null), document.getElementById('myapp2'));
-ReactDOM.render(element, document.getElementById('myapp'));
+
 /*********EC6***********************/
 
 var App3 = function (_React$Component) {
@@ -21216,12 +21215,33 @@ var App3 = function (_React$Component) {
   }
 
   _createClass(App3, [{
+    key: 'clickHandler',
+    value: function clickHandler(event) {
+      event.preventDefault();
+      ReactDOM.render(element, document.getElementById('myapp'));
+    }
+  }, {
+    key: 'clickHandler2',
+    value: function clickHandler2(event) {
+      event.preventDefault();
+      ReactDOM.render(React.createElement(App, null), document.getElementById('myapp'));
+    }
+  }, {
     key: 'render',
     value: function render() {
       return React.createElement(
         'div',
         { color: 'red' },
-        'This is Header'
+        React.createElement(
+          'a',
+          { href: '#', onClick: this.clickHandler },
+          'Page 1'
+        ),
+        React.createElement(
+          'a',
+          { href: '#', onClick: this.clickHandler2 },
+          'Page 2'
+        )
       );
     }
   }]);

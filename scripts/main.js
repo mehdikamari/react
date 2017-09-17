@@ -28,14 +28,23 @@ var user ={
 var element = (
 <b>welcome {getFullName(user)}</b>
 );
-ReactDOM.render(<App/>,document.getElementById('myapp2'));
-ReactDOM.render(element,document.getElementById('myapp'));
+
 /*********EC6***********************/
 class App3 extends React.Component{
+  clickHandler(event){
+    event.preventDefault();
+    ReactDOM.render(element,document.getElementById('myapp'));
+  }
+  clickHandler2(event){
+    event.preventDefault();
+    ReactDOM.render(<App/>,document.getElementById('myapp'));
+  }
   render(){
     return (
       <div color="red">
-        This is Header
+        <a href="#" onClick={this.clickHandler}>Page 1</a>
+        
+        <a href="#" onClick={this.clickHandler2}>Page 2</a>
       </div>
     );
   }
