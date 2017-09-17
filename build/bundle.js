@@ -21161,18 +21161,28 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 
 var App = React.createClass({
-  displayName: 'App',
+		displayName: 'App',
 
-  render: function render() {
-    return React.createElement(
-      'h1',
-      null,
-      'mehdi kamari'
-    );
-  }
+		render: function render() {
+				return React.createElement(
+						'a',
+						{ href: '' },
+						React.createElement(
+								'h1',
+								null,
+								'mehdi kamari'
+						)
+				);
+		}
 
 });
 
+var element = React.createElement(
+		'b',
+		null,
+		'welcome to reactJS'
+);
 ReactDOM.render(React.createElement(App, null), document.getElementById('myapp'));
+ReactDOM.render(element, document.getElementById('myapp2'));
 
 },{"react":183,"react-dom":31}]},{},[184]);
