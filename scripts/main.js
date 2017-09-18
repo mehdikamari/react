@@ -64,27 +64,37 @@ import {Row,Col,Menu,Icon} from 'antd';
 import ReactDOM from 'react-dom';
 
 const SubMenu = Menu.SubMenu;
-const MenuItemGroup = Menu.MenuItemGroup;
-class Header extends Component{
+const MenuItemGroup = Menu.ItemGroup;
 
+class Header extends Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      current : this.props.SelectedMenu
+    }
+  }
   render(){
     return(
-      <Menu selectedKey="home" mode="horizontal">
-        <Menu.Item key="home">
-          <Icon type="home"/>Home
-        </Menu.Item>
+      <Row type="flex" justify="center">
+      <Col span={24}>
+      <Menu selectedKeys="{this.state.current}" mode="horizontal">
+        <Menu.Item key="home"><Icon type="home"/>Home</Menu.Item>
         <Menu.Item key="about">
           <Icon type="question-circle" />About
         </Menu.Item>
         <SubMenu title={<span><Icon type="question-circle" />Contact Us</span>}>
-        <Menu.Item key="contactForm">
-          <Icon type="question-circle" />Contact Form
-        </Menu.Item>
-        <Menu.Item key="contactOffice">
-          <Icon type="question-circle" />Meet Us on office
-        </Menu.Item>
+        <Menu.Item key="contactForm"><Icon type="question-circle" />Contact Form 5</Menu.Item>
+        <Menu.Item key="contactOffice"><Icon type="question-circle" />Meet Us on office 5</Menu.Item>
+        <Menu.Item key="contactOffice3"><Icon type="question-circle" />Meet Us on office 5</Menu.Item>
+          <MenuItemGroup title={<span><Icon type="question-circle" />Contact Us 2</span>}>
+          <Menu.Item key="contactForm"><Icon type="question-circle" />Contact Form</Menu.Item>
+          <Menu.Item key="contactOffice"><Icon type="question-circle" />Meet Us on office</Menu.Item>
+          <Menu.Item key="contactOffice3"><Icon type="question-circle" />Meet Us on office 3</Menu.Item>
+        </MenuItemGroup>
         </SubMenu>
       </Menu>
+      </Col>
+      </Row>
     );
   }
 }
@@ -92,9 +102,13 @@ class Header extends Component{
    render(){
      return(
        <div>
-        <Header/>
-        <h1>Welcome to my website</h1>
-        </div>
+        <Row type="flex" justify="center"><Col span={24}><Header/></Col></Row>
+        <Row type="flex" justify="left"><Col>
+        <h1>
+        Welcome to React Sample
+        </h1>
+        </Col></Row>
+       </div>
      );
    }
  }

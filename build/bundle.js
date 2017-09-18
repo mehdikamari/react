@@ -105472,54 +105472,100 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 var SubMenu = _antd.Menu.SubMenu;
-var MenuItemGroup = _antd.Menu.MenuItemGroup;
+var MenuItemGroup = _antd.Menu.ItemGroup;
 
 var Header = function (_Component) {
   _inherits(Header, _Component);
 
-  function Header() {
+  function Header(props) {
     _classCallCheck(this, Header);
 
-    return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).call(this, props));
+
+    _this.state = {
+      current: _this.props.SelectedMenu
+    };
+    return _this;
   }
 
   _createClass(Header, [{
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        _antd.Menu,
-        { selectedKey: 'home', mode: 'horizontal' },
+        _antd.Row,
+        { type: 'flex', justify: 'center' },
         _react2.default.createElement(
-          _antd.Menu.Item,
-          { key: 'home' },
-          _react2.default.createElement(_antd.Icon, { type: 'home' }),
-          'Home'
-        ),
-        _react2.default.createElement(
-          _antd.Menu.Item,
-          { key: 'about' },
-          _react2.default.createElement(_antd.Icon, { type: 'question-circle' }),
-          'About'
-        ),
-        _react2.default.createElement(
-          SubMenu,
-          { title: _react2.default.createElement(
-              'span',
-              null,
+          _antd.Col,
+          { span: 24 },
+          _react2.default.createElement(
+            _antd.Menu,
+            { selectedKeys: '{this.state.current}', mode: 'horizontal' },
+            _react2.default.createElement(
+              _antd.Menu.Item,
+              { key: 'home' },
+              _react2.default.createElement(_antd.Icon, { type: 'home' }),
+              'Home'
+            ),
+            _react2.default.createElement(
+              _antd.Menu.Item,
+              { key: 'about' },
               _react2.default.createElement(_antd.Icon, { type: 'question-circle' }),
-              'Contact Us'
-            ) },
-          _react2.default.createElement(
-            _antd.Menu.Item,
-            { key: 'contactForm' },
-            _react2.default.createElement(_antd.Icon, { type: 'question-circle' }),
-            'Contact Form'
-          ),
-          _react2.default.createElement(
-            _antd.Menu.Item,
-            { key: 'contactOffice' },
-            _react2.default.createElement(_antd.Icon, { type: 'question-circle' }),
-            'Meet Us on office'
+              'About'
+            ),
+            _react2.default.createElement(
+              SubMenu,
+              { title: _react2.default.createElement(
+                  'span',
+                  null,
+                  _react2.default.createElement(_antd.Icon, { type: 'question-circle' }),
+                  'Contact Us'
+                ) },
+              _react2.default.createElement(
+                _antd.Menu.Item,
+                { key: 'contactForm' },
+                _react2.default.createElement(_antd.Icon, { type: 'question-circle' }),
+                'Contact Form 5'
+              ),
+              _react2.default.createElement(
+                _antd.Menu.Item,
+                { key: 'contactOffice' },
+                _react2.default.createElement(_antd.Icon, { type: 'question-circle' }),
+                'Meet Us on office 5'
+              ),
+              _react2.default.createElement(
+                _antd.Menu.Item,
+                { key: 'contactOffice3' },
+                _react2.default.createElement(_antd.Icon, { type: 'question-circle' }),
+                'Meet Us on office 5'
+              ),
+              _react2.default.createElement(
+                MenuItemGroup,
+                { title: _react2.default.createElement(
+                    'span',
+                    null,
+                    _react2.default.createElement(_antd.Icon, { type: 'question-circle' }),
+                    'Contact Us 2'
+                  ) },
+                _react2.default.createElement(
+                  _antd.Menu.Item,
+                  { key: 'contactForm' },
+                  _react2.default.createElement(_antd.Icon, { type: 'question-circle' }),
+                  'Contact Form'
+                ),
+                _react2.default.createElement(
+                  _antd.Menu.Item,
+                  { key: 'contactOffice' },
+                  _react2.default.createElement(_antd.Icon, { type: 'question-circle' }),
+                  'Meet Us on office'
+                ),
+                _react2.default.createElement(
+                  _antd.Menu.Item,
+                  { key: 'contactOffice3' },
+                  _react2.default.createElement(_antd.Icon, { type: 'question-circle' }),
+                  'Meet Us on office 3'
+                )
+              )
+            )
           )
         )
       );
@@ -105544,11 +105590,27 @@ var Welcome = function (_Component2) {
       return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement(Header, null),
         _react2.default.createElement(
-          'h1',
-          null,
-          'Welcome to my website'
+          _antd.Row,
+          { type: 'flex', justify: 'center' },
+          _react2.default.createElement(
+            _antd.Col,
+            { span: 24 },
+            _react2.default.createElement(Header, null)
+          )
+        ),
+        _react2.default.createElement(
+          _antd.Row,
+          { type: 'flex', justify: 'left' },
+          _react2.default.createElement(
+            _antd.Col,
+            null,
+            _react2.default.createElement(
+              'h1',
+              null,
+              'Welcome to React Sample'
+            )
+          )
         )
       );
     }
