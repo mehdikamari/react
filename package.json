@@ -25,6 +25,8 @@
     "watchify": "^3.8.0"
   },
   "dependencies": {
-    "antd": "^2.5.3"
+    "ant": "^0.2.0",
+    "antd": "^2.5.3",
+    "bootstrap": "^3.3.7"
   }
 }
