@@ -105484,11 +105484,22 @@ var Header = function (_Component) {
 
     _this.state = {
       current: _this.props.SelectedMenu
+
     };
+
+    _this.handleClick = _this.handleClick.bind(_this);
     return _this;
   }
 
   _createClass(Header, [{
+    key: 'handleClick',
+    value: function handleClick(e) {
+      e.preventDefault;
+      this.setState({
+        current: e.key
+      });
+    }
+  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
@@ -105499,7 +105510,7 @@ var Header = function (_Component) {
           { span: 24 },
           _react2.default.createElement(
             _antd.Menu,
-            { selectedKeys: '{this.state.current}', mode: 'horizontal' },
+            { selectedKeys: [this.state.current], mode: 'horizontal', onClick: this.handleClick },
             _react2.default.createElement(
               _antd.Menu.Item,
               { key: 'home' },

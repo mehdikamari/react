@@ -71,13 +71,25 @@ class Header extends Component{
     super(props);
     this.state = {
       current : this.props.SelectedMenu
+
     }
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(e){
+    e.preventDefault;
+    this.setState(
+      {
+        current:e.key
+      }
+    );
   }
   render(){
     return(
       <Row type="flex" justify="center">
       <Col span={24}>
-      <Menu selectedKeys="{this.state.current}" mode="horizontal">
+      <Menu selectedKeys={[this.state.current]} mode="horizontal" onClick={this.handleClick}>
         <Menu.Item key="home"><Icon type="home"/>Home</Menu.Item>
         <Menu.Item key="about">
           <Icon type="question-circle" />About
